@@ -1,3 +1,6 @@
+if test "$(uname)" != "Darwin"; then
+  return
+fi
 brew_installed=""
 
 function brew_install_upgrade_formulas() {

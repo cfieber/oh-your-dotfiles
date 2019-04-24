@@ -93,8 +93,10 @@ function install_file() {
 }
 
 function run_installers() {
-  brew_install_upgrade_formulas
-  mas_install_upgrade_formulas
+  if test "$(uname)" = "Darwin"; then
+    brew_install_upgrade_formulas
+    mas_install_upgrade_formulas
+  fi
 
   info 'running installers'
   dotfiles_find install.sh | while read installer ; do run "running ${installer}" "${installer}" ; done

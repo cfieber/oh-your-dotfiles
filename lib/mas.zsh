@@ -1,3 +1,7 @@
+if test "$(uname)" != "Darwin"; then
+  return
+fi
+
 mas_installed=""
 
 function mas_install_upgrade_formulas() {
